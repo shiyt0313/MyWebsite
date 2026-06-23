@@ -36,6 +36,20 @@ export default async function ProjectDetailPage({ params }: { params: Promise<{ 
         <p className="mt-6 text-sm uppercase tracking-[0.28em] text-slate">{project.frontmatter.date}</p>
         <h1 className="mt-4 font-serif text-4xl text-ink">{project.frontmatter.title}</h1>
         <p className="mt-4 text-lg leading-8 text-slate">{project.frontmatter.description}</p>
+        {project.frontmatter.links?.length ? (
+          <div className="mt-6 flex flex-wrap gap-4 text-sm">
+            {project.frontmatter.links.map((link) => (
+              <Link
+                key={`${link.label}-${link.href}`}
+                className="font-medium text-accent underline-offset-4 hover:underline"
+                href={link.href}
+                target={link.href.startsWith("/") ? undefined : "_blank"}
+              >
+                {link.label}
+              </Link>
+            ))}
+          </div>
+        ) : null}
         <div className="prose prose-slate mt-10 max-w-none">{project.content}</div>
       </article>
     );

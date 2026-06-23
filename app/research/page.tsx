@@ -5,7 +5,7 @@ export const metadata = {
 const areas = [
   {
     title: "Human-AI Collaboration",
-    description: "Interactive systems where AI acts as a partner in decision-making, creation, and everyday support."
+    description: "Interactive systems where AI acts as a partner in decision-making, creation, programming, and everyday support."
   },
   {
     title: "Ubiquitous Computing",
@@ -13,11 +13,11 @@ const areas = [
   },
   {
     title: "Wearable Sensing",
-    description: "Body-adjacent sensing pipelines for on-device inference, low-friction interaction, and health applications."
+    description: "Body-adjacent sensing pipelines for whisper input, gaze interaction, acoustic sensing, and health applications."
   },
   {
     title: "Smart Home HAR",
-    description: "Activity recognition in domestic settings with robust multimodal sensing and deployable system design."
+    description: "Activity recognition and smart environment deployment with robust multimodal sensing, LLM reasoning, and deployable system design."
   },
   {
     title: "Health Sensing",

@@ -22,6 +22,15 @@ export function ProjectCard({ project }: { project: ProjectFrontmatter }) {
         <Link className="font-medium text-accent underline-offset-4 hover:underline" href={`/projects/${project.slug}`}>
           View project
         </Link>
+        {project.links?.[0] ? (
+          <Link
+            className="ml-4 font-medium text-accent underline-offset-4 hover:underline"
+            href={project.links[0].href}
+            target={project.links[0].href.startsWith("/") ? undefined : "_blank"}
+          >
+            {project.links[0].label}
+          </Link>
+        ) : null}
       </div>
     </article>
   );

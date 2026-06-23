@@ -7,6 +7,7 @@ export const metadata = {
 
 const contacts = [
   { label: "Email", href: `mailto:${siteConfig.email}`, value: siteConfig.email },
+  { label: "Alternative Email", href: `mailto:${siteConfig.alternateEmail}`, value: siteConfig.alternateEmail },
   { label: "GitHub", href: siteConfig.github, value: siteConfig.github },
   { label: "Google Scholar", href: siteConfig.scholar, value: siteConfig.scholar },
   { label: "LinkedIn", href: siteConfig.linkedin, value: siteConfig.linkedin }

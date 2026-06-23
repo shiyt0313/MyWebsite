@@ -1,3 +1,6 @@
+import Image from "next/image";
+import { siteConfig } from "@/lib/site";
+
 export const metadata = {
   title: "About"
 };
@@ -6,11 +9,19 @@ export default function AboutPage() {
   return (
     <div className="grid gap-8 lg:grid-cols-[1fr_1.2fr]">
       <section className="rounded-[2rem] border border-white/80 bg-white/90 p-8 shadow-panel">
+        <Image
+          alt="Yingtian Shi"
+          className="h-36 w-36 rounded-full object-cover"
+          height={144}
+          src="/images/profile.png"
+          width={144}
+        />
         <p className="text-sm uppercase tracking-[0.28em] text-accent">About</p>
         <h1 className="mt-4 font-serif text-4xl text-ink">Academic profile</h1>
         <p className="mt-6 leading-8 text-slate">
-          This page is structured for a research-focused portfolio: concise biography, academic trajectory, and the core
-          questions that connect your projects, publications, and ongoing work.
+          My name is Yingtian Shi. I am currently a second-year PhD student in Computer Science at Georgia Tech, advised by
+          {` ${siteConfig.advisor}`}. My research interests lie in ubiquitous computing and AI, specifically in Human-AI
+          co-evolution.
         </p>
       </section>
 
@@ -18,29 +29,30 @@ export default function AboutPage() {
         <div className="rounded-[2rem] border border-white/80 bg-white/90 p-8 shadow-panel">
           <h2 className="font-serif text-2xl text-ink">Education</h2>
           <p className="mt-4 leading-8 text-slate">
-            PhD student in Computer Science at Georgia Tech. This section is structured so you can add your prior degrees,
-            expected graduation timeline, and any cross-disciplinary training without changing the page layout.
+            PhD student in Computer Science at Georgia Tech. This section can be extended with prior degrees and milestones
+            as your academic record evolves.
           </p>
         </div>
         <div className="rounded-[2rem] border border-white/80 bg-white/90 p-8 shadow-panel">
           <h2 className="font-serif text-2xl text-ink">Research Background</h2>
           <p className="mt-4 leading-8 text-slate">
             My work sits at the intersection of ubiquitous computing and AI. I build interactive sensing systems and study
-            how intelligent models can collaborate with users in context-aware, deployable environments.
+            how intelligent models can collaborate with users in context-aware, deployable environments, including wearables,
+            smart homes, gaze interfaces, and multimodal programming tools.
           </p>
         </div>
         <div className="rounded-[2rem] border border-white/80 bg-white/90 p-8 shadow-panel">
           <h2 className="font-serif text-2xl text-ink">Advisor and Lab</h2>
           <p className="mt-4 leading-8 text-slate">
-            Advised by Dr. Thomas Ploetz. You can extend this block with lab affiliation, department links, and collaborators
-            while keeping the page static and easy to maintain.
+            Advised by Dr. Thomas Ploetz at Georgia Tech. This page is intentionally static so lab details, collaborators,
+            and affiliations can be updated without changing the content system.
           </p>
         </div>
         <div className="rounded-[2rem] border border-white/80 bg-white/90 p-8 shadow-panel">
           <h2 className="font-serif text-2xl text-ink">Academic Interests</h2>
           <p className="mt-4 leading-8 text-slate">
-            Focus areas can include human-AI collaboration, situated intelligence, multimodal sensing, everyday health
-            technologies, and deployable ubiquitous systems.
+            Focus areas include human-AI collaboration, situated intelligence, multimodal sensing, wearable interfaces,
+            smart-home activity recognition, and everyday health technologies.
           </p>
         </div>
       </section>

@@ -1,3 +1,4 @@
+import Image from "next/image";
 import Link from "next/link";
 import { ProjectCard } from "@/components/ProjectCard";
 import { PublicationItem } from "@/components/PublicationItem";
@@ -28,8 +29,8 @@ export default function HomePage() {
           </h1>
           <p className="mt-6 max-w-2xl text-lg leading-8 text-slate">
             I am a PhD student in Computer Science at Georgia Tech, advised by Dr. Thomas Ploetz. My research focuses on
-            ubiquitous computing and AI, with a particular interest in human-AI co-evolution across wearable, home, and
-            health-oriented systems.
+            ubiquitous computing and AI, with a particular interest in human-AI co-evolution across wearable sensing,
+            multimodal interaction, smart-home intelligence, and health-oriented systems.
           </p>
           <div className="mt-8 flex flex-wrap gap-3">
             <Link className="rounded-full bg-ink px-5 py-3 text-sm font-medium text-white" href="/projects">
@@ -41,7 +42,19 @@ export default function HomePage() {
           </div>
         </div>
         <div className="rounded-[1.75rem] bg-ink p-8 text-white">
-          <p className="text-sm uppercase tracking-[0.28em] text-accentSoft">Quick Links</p>
+          <div className="flex items-center gap-4">
+            <Image
+              alt="Yingtian Shi"
+              className="h-20 w-20 rounded-full border border-white/20 object-cover"
+              height={80}
+              src="/images/profile.png"
+              width={80}
+            />
+            <div>
+              <p className="text-sm uppercase tracking-[0.28em] text-accentSoft">Quick Links</p>
+              <p className="mt-2 text-sm text-slate-200">{siteConfig.affiliation}</p>
+            </div>
+          </div>
           <div className="mt-6 space-y-4 text-sm">
             <Link className="block border-b border-white/15 pb-3 hover:text-accentSoft" href={siteConfig.github} target="_blank">
               GitHub
