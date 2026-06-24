@@ -9,7 +9,7 @@ Next.js academic website starter for a personal research homepage, portfolio, pu
 - Tailwind CSS
 - MDX for projects and blog content
 - Local TypeScript metadata for publications
-- Vercel deployment
+- Static export for GitHub Pages or Vercel
 
 ## Local Development
 
@@ -93,6 +93,23 @@ The publications page sorts entries by year descending automatically.
 3. Add your custom domain.
 4. Follow the DNS records Vercel provides.
 5. Wait for SSL provisioning to complete.
+
+## Deployment to GitHub Pages
+
+This project is configured for static export with `output: "export"` and supports repository-path deployment such as `https://shiyt0313.github.io/MyWebsite/`.
+
+1. Push the `MyWebsite` directory to the `main` branch of your GitHub repository.
+2. In GitHub, open `Settings -> Pages`.
+3. Set `Source` to `GitHub Actions`.
+4. Commit the workflow in `.github/workflows/deploy.yml`.
+5. Push to `main` and wait for the `Deploy Next.js site to Pages` workflow to finish.
+6. Your site will publish to the repository Pages URL automatically.
+
+Notes:
+
+- For repository Pages, the base path is inferred from `GITHUB_REPOSITORY`.
+- For a custom domain or manual URL override, set `NEXT_PUBLIC_SITE_URL`.
+- The static export output is written to `out/`.
 
 ## GitHub Workflow
 

@@ -1,9 +1,27 @@
+function getSiteUrl() {
+  if (process.env.NEXT_PUBLIC_SITE_URL) {
+    return process.env.NEXT_PUBLIC_SITE_URL;
+  }
+
+  const [owner, repository] = process.env.GITHUB_REPOSITORY?.split("/") ?? [];
+
+  if (owner && repository) {
+    if (repository.endsWith(".github.io")) {
+      return `https://${repository}`;
+    }
+
+    return `https://${owner}.github.io/${repository}`;
+  }
+
+  return "http://localhost:3000";
+}
+
 export const siteConfig = {
   name: "Yingtian Shi",
   title: "Yingtian Shi | Research Portfolio",
   description:
     "Academic website for Yingtian Shi, PhD student at Georgia Tech, featuring research projects, publications, notes, CV, and contact information.",
-  url: "https://example.vercel.app",
+  url: getSiteUrl(),
   affiliation: "PhD Student, Computer Science, Georgia Tech",
   advisor: "Dr. Thomas Ploetz",
   bio: "I study ubiquitous computing and AI, with a focus on human-AI co-evolution, wearable sensing, smart environments, and deployable interactive systems.",
